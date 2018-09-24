@@ -27,6 +27,6 @@
     <!--
     <Manager pathname="" />
     -->
-    <Manager className="com.hazelcast.session.HazelcastSessionManager" sticky="false" deferredWrite="true" />
+    <Manager className="com.hazelcast.session.HazelcastSessionManager" sticky="false" deferredWrite="true" writeStrategy="twoPhaseCommit"/>
 
 </Context>

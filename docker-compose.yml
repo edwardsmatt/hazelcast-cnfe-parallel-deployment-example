@@ -11,8 +11,8 @@ tomcatOne:
   volumes:
    - ./cluster/hazelcast-server.xml:/usr/local/tomcat/conf/server.xml
    - ./cluster/hazelcast-context.xml:/usr/local/tomcat/conf/context.xml
-   - ./cluster/lib/hazelcast-tomcat7-sessionmanager-1.1.3.jar:/usr/local/tomcat/lib/hazelcast-tomcat7-sessionmanager-1.1.3.jar
-  #  - ~/.m2/repository/com/hazelcast/hazelcast-tomcat7-sessionmanager/1.1.4-SNAPSHOT/hazelcast-tomcat7-sessionmanager-1.1.4-SNAPSHOT.jar:/usr/local/tomcat/lib/hazelcast-tomcat7-sessionmanager-1.1.4-SNAPSHOT.jar
+  #  - ./cluster/lib/hazelcast-tomcat7-sessionmanager-1.1.3.jar:/usr/local/tomcat/lib/hazelcast-tomcat7-sessionmanager-1.1.3.jar
+   - ~/.m2/repository/com/hazelcast/hazelcast-tomcat7-sessionmanager/1.1.4-SNAPSHOT/hazelcast-tomcat7-sessionmanager-1.1.4-SNAPSHOT.jar:/usr/local/tomcat/lib/hazelcast-tomcat7-sessionmanager-1.1.4-SNAPSHOT.jar
    - ./cluster/lib/hazelcast-all-3.9.1.jar:/usr/local/tomcat/lib/hazelcast-all-3.9.1.jar
    - ./test-app/target/basic-web-app##1.war:/usr/local/tomcat/webapps/basic-web-app##1.war
    - ./cluster/logging.properties:/usr/local/tomcat/conf/logging.properties
