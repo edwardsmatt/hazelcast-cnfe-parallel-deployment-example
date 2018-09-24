@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.edwardsmatt</groupId>
+    <artifactId>gatling-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <gatling-maven-plugin.version>2.2.1</gatling-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>2.2.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling-maven-plugin.version}</version>
+                <configuration>
+                    <configFolder>src/test/gatling/conf</configFolder>
+                    <dataFolder>src/test/gatling/user-files/data</dataFolder>
+                    <resultsFolder>target/gatling/results/${maven.build.timestamp}/</resultsFolder>
+                    <bodiesFolder>src/test/gatling/user-files/bodies</bodiesFolder>
+                    <simulationsFolder>src/test/gatling/user-files/simulations</simulationsFolder>
+                    <!-- If uncommented, these arguments below will be applied to all your gatling tests -->
+                    <!--<jvmArgs>
+                        <jvmArg>-Dusers=100</jvmArg>
+                        <jvmArg>-Dramp=1</jvmArg>
+                    </jvmArgs>-->
+                    <!--
+                    This will run multiple simulations one by one. Useful when doing Gatling
+                    tests in CI.
+                    -->
+                    <runMultipleSimulations>true</runMultipleSimulations>
+                    <!--
+                    To run only one simulation, you need to disable the "runMultipleSimulations"
+                    above, and write the name of your simulation below.
+                    -->
+                    <!--<simulationClass>WriteTheNameOfYourGatlingSimulation</simulationClass>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
