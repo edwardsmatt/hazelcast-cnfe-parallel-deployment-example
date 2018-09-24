@@ -1,6 +1,6 @@
 # java.lang.ClassNotFoundException, parallel deployments and the hazelcast-tomcat-sessionmanager
 
-See: https://github.com/hazelcast/hazelcast-tomcat-sessionmanager/issues/
+See: https://github.com/hazelcast/hazelcast-tomcat-sessionmanager/issues/51
 
 This repo reproduces the issue linked above using:
  
@@ -48,6 +48,8 @@ docker container ls | grep tomcat:7.0-jre8 | cut -d ' ' -f 1 | awk '{print "dock
 ```
 
 #### Results
+The application will now return 500 - Internal Server Errors until the tomcat instance is restarted.
+
 The Internal Server Error results can be viewed in the gatling report and demonstrated in the docker-compose output logs.
  
 ```bash
